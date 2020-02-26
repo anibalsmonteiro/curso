@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace Source
+namespace Source.Test
 {
     class Produto
     {

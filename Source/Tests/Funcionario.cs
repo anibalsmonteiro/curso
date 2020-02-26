@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace Source
+namespace Source.Test
 {
     public class Funcionario
     {

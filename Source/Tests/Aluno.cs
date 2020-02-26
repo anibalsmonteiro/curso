@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Source
+namespace Source.Test
 {
     class Aluno
     {

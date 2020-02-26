@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Source
+namespace Source.Test
 {
     public class ConversorDeMoeda
     {
