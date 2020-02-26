@@ -1,12 +1,31 @@
 ﻿using System;
 using System.Globalization;
 using System.Collections.Generic;
+using Source.Entities;
+using Source.Entities.Enums;
 
 namespace Source
 {
     class Program
     {
         static void Main(string[] args)
+        {
+            Order order = new Order { 
+                Id = 0, 
+                Moment = DateTime.Now.Date, 
+                Status = OrderStatus.Processing
+            };
+
+            Console.WriteLine(order);
+
+            string txt = OrderStatus.PendingPayment.ToString();
+            Console.WriteLine(txt);
+
+            OrderStatus os = Enum.Parse<OrderStatus>("Delivered");
+            Console.WriteLine(os);
+        }
+
+        static void TesteDateTime()
         {
             //1
             //Esse comentário aqui foi modificado para efeitos de teste da ferramenta git
@@ -19,7 +38,6 @@ namespace Source
             Console.WriteLine("d1 to local: " + d1.ToLocalTime());
             Console.WriteLine("d1 to utc: " + d1.ToUniversalTime());
         }
-
         static void ExercicioHashSet()
         {
             HashSet<int> a = new HashSet<int>();
