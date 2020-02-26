@@ -1,11 +1,30 @@
 ﻿using System;
 using System.Globalization;
 using System.Collections.Generic;
+using Source.Entities;
+using Source.Entities.Enums;
 
 namespace Source.Test
 {
     class TestProgram
     {
+        static void TestOrderClass()
+        {
+            Order order = new Order
+            {
+                Id = 0,
+                Moment = DateTime.Now.Date,
+                Status = OrderStatus.Processing
+            };
+
+            Console.WriteLine(order);
+
+            string txt = OrderStatus.PendingPayment.ToString();
+            Console.WriteLine(txt);
+
+            OrderStatus os = Enum.Parse<OrderStatus>("Delivered");
+            Console.WriteLine(os);
+        }
         static void TesteDateTime()
         {
             //1
