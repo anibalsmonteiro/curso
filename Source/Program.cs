@@ -10,6 +10,8 @@ namespace Source
         {
             //1
             //2
+            //3
+
             DateTime d1 = new DateTime(2000, 8, 15, 13, 5, 58, DateTimeKind.Local);
 
             Console.WriteLine("d1: " + d1);
