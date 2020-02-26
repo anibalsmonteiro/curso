@@ -9,7 +9,7 @@ namespace Source
         static void Main(string[] args)
         {
             //1
-            //2
+            //Esse comentário aqui foi modificado para efeitos de teste da ferramenta git
             //3
 
             DateTime d1 = new DateTime(2000, 8, 15, 13, 5, 58, DateTimeKind.Local);
