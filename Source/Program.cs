@@ -1,7 +1,6 @@
 ﻿using System;
 using Source.Entities;
 using Source.Entities.Enums;
-using Source.Test;
 using System.Globalization;
 
 namespace Source
@@ -17,7 +16,7 @@ namespace Source
             Console.WriteLine("\nEnter worker data: ");
             Console.Write("Name: ");
             string name = Console.ReadLine();
-            Console.Write("Level: ");
+            Console.Write("Level (Junior/MidLevel/Senior): ");
             WorkerLevel level = Enum.Parse<WorkerLevel>(Console.ReadLine());
             Console.Write("Base salary: ");
             double baseSalary = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
@@ -25,7 +24,7 @@ namespace Source
             Worker worker = new Worker(name, level, baseSalary, department);
 
             Console.Write("\nhow many contracts to this worker? ");
-            int qtyContracts = int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            int qtyContracts = int.Parse(Console.ReadLine());
 
             for (int i = 1; i <= qtyContracts; i++)
             {
@@ -38,7 +37,7 @@ namespace Source
                 double valuePerHour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
                 Console.Write("Duration (hours): ");
-                int hours = int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                int hours = int.Parse(Console.ReadLine());
 
                 HourContract hourContract = new HourContract(date, valuePerHour, hours);
                 worker.AddContract(hourContract);
@@ -47,7 +46,7 @@ namespace Source
             Console.Write("\nEnter month and year to calculate income (MM/YYYY): ");
             string monthYearSearch = Console.ReadLine();
             int month = int.Parse(monthYearSearch.Substring(0, 2));
-            int year = int.Parse(monthYearSearch.Substring(3, 4));
+            int year = int.Parse(monthYearSearch.Substring(3));
 
             Console.WriteLine("Name: " + worker.Name);
             Console.WriteLine("Department: " + worker.Department.Name);
