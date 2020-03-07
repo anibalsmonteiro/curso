@@ -10,12 +10,19 @@ namespace Source
     {
         static void Main(string[] args)
         {
-<<<<<<< HEAD
+            RunShape();
         }
 
         public static void RunShape()
         {
-            List<Shape> shapes = new List<Shape>();
+
+            IShape circle = new Circle(2.0, Color.Black);
+            IShape rectangle = new Rectangle(2.0, 3.0, Color.Black);
+
+            Console.WriteLine(circle);
+            Console.WriteLine(rectangle);
+
+            List<IShape> shapes = new List<IShape>();
 
             Console.Write("Enter the number of shapes: ");
             int n = int.Parse(Console.ReadLine());
@@ -29,7 +36,7 @@ namespace Source
                 Console.Write("Color (Black/Blue/Red): ");
                 Color color = Enum.Parse<Color>(Console.ReadLine());
 
-                if (ch == 'r')
+                if (ch == 'R')
                 {
                     Console.Write("Width: ");
                     double width = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
@@ -48,7 +55,7 @@ namespace Source
             }
 
             Console.WriteLine("Shape areas: ");
-            foreach (Shape shape in shapes)
+            foreach (IShape shape in shapes)
             {
                 Console.WriteLine(shape.Area().ToString("F2", CultureInfo.InvariantCulture));
             }
@@ -139,16 +146,6 @@ namespace Source
                 acc5.UpdateBalance();
                 Console.WriteLine("Update!");
             }
-=======
-            AbstractShape circle = new Circle(2.0, Color.Black);
-            AbstractShape rectangle = new Rectangle(2.0, 3.0, Color.Orange);
-
-            Console.WriteLine("circle.Area: " + circle.Area().ToString("F2", CultureInfo.InvariantCulture));
-            Console.WriteLine("circle.Color: " + circle.Color);
-
-            Console.WriteLine("rectangle.Area: " + rectangle.Area());
-            Console.WriteLine("rectangle.Color: " + rectangle.Color);
->>>>>>> IShape_Abstract_Shape_implementation
         }
     }
 }
